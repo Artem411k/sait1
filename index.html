@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGAZINCHIK</title>
+    <link rel="stylesheet" href="style.css">
 
+</head>
+<body>
+    <header>
+        <button id="myButton">Нажми меня</button>
+        <h1>MAGAZINCHIK</h1>
+        <button id="themeToggle">Сменить дизайн</button>
+    </header>
+    <div class="content"></div>
+    <!-- Добавленная секция с тремя кнопками -->
+        <h2>Нумерация кнопок</h2>
+    <section id="list-container">
+        <ul id="itemList">
+            <li>Элемент 1</li>
+            <li>Элемент 2</li>
+            <li>Элемент 3</li>
+            <li><button>Кнопка 1</button></li>
+            <li><button>Кнопка 2</button></li>
+            <li><button class="super_element">Кнопка 3</button></li>
+        </ul>
+        <button id="addItemButton">Добавить элемент</button>
+        <button id="removeFirstItemButton">Удалить первый элемент</button>
+        <button id="clickClassButton" class="super_element">Добавить класс "click"</button>
+    </section>
+    <section id="buttons">
+        <button class="number-button super_element">1</button>
+        <button class="number-button">2</button>
+        <button class="number-button">3</button>
+        <button id="countButton" class="super_element">4</button>
+        <button id="textChangeButton">5</button>
+        <button id="addTitleButton">Добавить заголовок</button>
+        <button id="removeTitleButton">Удалить заголовок</button>
+        <button id="hoverButton">Наведи на меня</button>
+    </section>
+    <main>
+        <section id="catalog">
+            <h2>Ассортимент продукции</h2>
+            <form id="filter-form">
+                <label for="min-price">Минимальная цена:</label>
+                <input type="number" id="min-price" placeholder="Любая">
+
+                <label for="max-price">Максимальная цена:</label>
+                <input type="number" id="max-price" placeholder="Любая">
+
+                <button type="submit">Фильтровать</button>
+            </form>
+            <div id="products-list"></div>
+        </section>
+        <textarea></textarea>  <!-- Добавим textarea -->
+    </main>
+        <section id="agreement-section">
+    <form id="agreement-form">
+        <label>
+            <input type="checkbox" id="agree-checkbox">
+            Согласен с условиями
+        </label>
+        <p id="agreement-error" class="error-message"></p>
+        <button type="button" id="submit-agreement">Отправить</button>
+    </form>
+</section>
+        <section id="drink-selection">
+    <h2>Выберите напиток:</h2>
+    <form id="drink-form">
+        <label>
+            <input type="radio" name="drink" value="tea"> Чай
+        </label>
+        <label>
+            <input type="radio" name="drink" value="coffee"> Кофе
+        </label>
+        <button type="button" id="submit-drink">Отправить</button>
+    </form>
+</section>
+<section id="password-section">
+    <h2>Проверка пароля</h2>
+    <div class="password-container">
+        <input type="password" id="password-input" placeholder="Введите пароль">
+        <button id="check-password">Проверить</button>
+    </div>
+    <p id="password-message"></p>
+</section>
+<section id="dynamic-title-section">
+    <h1 id="dynamic-heading">Заголовок</h1>
+    <input
+        type="text"
+        id="title-input"
+        placeholder="Введите текст для заголовка"
+    >
+</section>
+<section id="dynamic-content">
+    <div class="input-group">
+        <input type="text" id="from" placeholder="Введите текст">
+        <span id="output"></span>
+    </div>
+
+    <div>
+        <button class="messageBtn">Анимировать сообщение</button>
+        <div class="message">Это сообщение появится с анимацией</div>
+    </div>
+    <form id="validationForm">
+        <input type="text" name="name" placeholder="Имя" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <button type="submit">Отправить</button>
+    </form>
+</section>
+    </main>
+    <footer>
+        <p>© 2025 Интернет-магазин компьютерной техники</p>
+    </footer>
+
+    <script>
+        // 1. Все теги прогрузились
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("все теги прогрузились");
+        });
+
+        // 2. Страница загрузилась (включая ресурсы)
+        window.addEventListener('load', function() {
+            console.log("страница загрузилась");
+        });
+
+        // 3. Делегирование клика по элементам
+        document.addEventListener('click', function(event) {
+            const target = event.target;
+            const tagName = target.tagName.toLowerCase();
+            const hasClass = target.classList.contains('super_element');
+
+            if (hasClass) {
+                console.log(`Класс "super_element" присутствует в элементе "${tagName}".`);
+            } else {
+                console.log(`Класс "super_element" отсутствует в элементе "${tagName}".`);
+            }
+        });
+
+        // 4. Наведение на textarea
+        const textarea = document.querySelector('textarea');
+        textarea.addEventListener('mouseover', function() {
+            console.log("Вы навели на textarea.");
+        });
+
+        // 5. Клик по ul (делегирование на кнопки)
+        const itemList = document.getElementById('itemList');
+        itemList.addEventListener('click', function(event) {
+            const target = event.target;
+            if (target.tagName === 'BUTTON') {
+                console.log(target.textContent);
+            }
+        });
+
+        // 6. Порядок вывода сообщений
+        /*
+        Почему сначала текст из 5 задания, а потом из 3:
+        События в JavaScript обрабатываются в порядке их возникновения.  Когда мы кликаем по кнопке внутри `ul`,
+        сначала происходит событие `click` на самой кнопке (которое "всплывает" до `ul`), и только потом обрабатывается `click` на уровне документа (который ловит все клики).
+        Поэтому сначала выполняется код, связанный с `ul` (задание 5), а затем код, связанный с общим делегированием (задание 3).
+        */
+
+        // 7. Изменение цвета фона каждого второго li
+        const listItems = document.querySelectorAll('#itemList li');
+        for (let i = 1; i < listItems.length; i += 2) {
+            listItems[i].style.backgroundColor = '#f0f0f0'; // светло-серый
+        }
+
+        // Кнопка "Наведи на меня" (вывод в консоль при наведении)
+        const hoverButton = document.getElementById('hoverButton');
+
+        hoverButton.addEventListener('mouseover', function() {
+            console.log("Курсор наведен на кнопку 'Наведи на меня'.");
+            hoverButton.style.backgroundColor = '#00118f'; // Изменяем цвет фона при наведении
+            hoverButton.style.color = 'white'; // Изменяем цвет текста при наведении
+        });
+
+        hoverButton.addEventListener('mouseout', function() {
+            console.log("Курсор убран с кнопки 'Наведи на меня'.");
+            hoverButton.style.backgroundColor = '#1a34ff'; // Возвращаем исходный цвет фона
+            hoverButton.style.color = 'black'; // Возвращаем исходный цвет текста
+        });
+
+        // Кнопка "Сменить дизайн"
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-theme');
+            document.querySelector('header').classList.toggle('dark-theme');
+            const buttons = document.querySelectorAll('button'); // Select all buttons
+            buttons.forEach(button => {
+                button.classList.toggle('dark-theme'); // Toggle dark-theme class on each button
+            });
+            const textareas = document.querySelectorAll('textarea'); // Select all buttons
+            textareas.forEach(textarea => {
+                textarea.classList.toggle('dark-theme'); // Toggle dark-theme class on each button
+            });
+        });
+    </script>
+</body>
+</html>
