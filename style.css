@@ -1,1 +1,425 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .content{
+      margin-left: 10px;
+  }
+  
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Стили хедера */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  /* Стили навигации (если есть) */
+  nav ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+  }
+  
+  /* Стили основного контента */
+  main {
+    padding: 20px;
+    margin: 0 auto; /* Центрирование контента */
+    max-width: 1200px; /* Ограничение максимальной ширины */
+  }
+  
+  /* Стили секции каталога */
+  #catalog {
+    margin-bottom: 20px;
+  }
+  
+  #catalog h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Стили формы фильтрации */
+  #filter-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center; /* Выравнивание по вертикали */
+  }
+  
+  #filter-form label {
+    margin-right: 5px;
+  }
+  
+  #filter-form input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80px; /* Задайте ширину для инпутов */
+  }
+  
+  #filter-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #filter-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Стили списка продуктов */
+  #products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Адаптивная сетка */
+    gap: 20px;
+  }
+  
+  /* Пример стиля карточки продукта */
+  .product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .product h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .product p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Стили футера */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  /* Стили кнопок */
+  button {
+    background-color: #006a94; /* Зеленый */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #010f35; /* Более темный зеленый */
+  }
+  
+  /* Дополнительные стили для кнопок нумерации */
+  #buttons {
+    margin-top: 20px;
+  }
+  
+  #buttons button {
+    margin-right: 10px;
+  }
+  
+  /* Стили для списка */
+  #list-container {
+    margin-top: 20px;
+  }
+  
+  #itemList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #itemList li {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .click {
+    background-color: yellow;
+  }
+  
+  /* Стили для формы соглашения */
+  #agreement-section {
+      margin-top: 20px;
+  }
+  
+  #agreement-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  #agree-checkbox {
+      margin-right: 5px;
+  }
+  
+  #agreement-error {
+      color: red;
+      margin-top: 5px;
+  }
+  
+  /* Стили для выбора напитка */
+  #drink-selection {
+      margin-top: 20px;
+  }
+  
+  #drink-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  /* Стили для проверки пароля */
+  #password-section {
+      margin-top: 20px;
+  }
+  
+  .password-container {
+      display: flex;
+      gap: 10px;
+  }
+  
+  #password-message {
+      margin-top: 10px;
+  }
+  
+  /* Стили для динамического заголовка */
+  #dynamic-title-section {
+      margin-top: 20px;
+  }
+  
+  #title-input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+  }
+  
+  /* Стили для динамического контента */
+  #dynamic-content {
+      margin-top: 20px;
+  }
+  
+  .input-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+  }
+  
+  .message {
+      display: none;
+      background-color: #e0e0e0;
+      padding: 10px;
+      margin-top: 10px;
+  }
+  
+  /* Стили для формы валидации */
+  #validationForm {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  #validationForm input {
+      padding: 8px;
+  }
+  
+  /* Дополнительные стили (можно настроить по своему вкусу) */
+  .error-message {
+      color: red;
+  }
+  
+  /* Добавьте стили для адаптивности (если необходимо) */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+  
+    header h1 {
+      margin-bottom: 10px;
+    }
+    #products-list {
+      grid-template-columns: 1fr;
+    }
+  }
 
+
+  /* Добавляем стили для textarea, чтобы можно было навести курсор */
+  textarea {
+    width: 300px;
+    height: 100px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+/* Стили для кнопки "Наведи на меня" */
+#hoverButton {
+    background-color: #ff002b; /* Голубой цвет */
+    transition: background-color 0.3s ease; /* Плавный переход цвета */
+}
+
+#hoverButton:hover {
+    background-color: #b92941; /* Более темный голубой цвет */
+    color: white; /* Меняем цвет текста при наведении */
+}
+
+/* Стили для светлой темы */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Стили для темной темы */
+body.dark-theme {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+header.dark-theme {
+    background-color: #222;
+    color: #ddd;
+}
+
+
+
+
+ /* Общие стили */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f2f1; /* Светлый бирюзовый */
+    color: #263238; /* Темно-серый (чуть светлее черного) */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: #00796b; /* Темный бирюзовый */
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #4db6ac; /* Средний бирюзовый */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #26a69a; /* Чуть более темный бирюзовый */
+}
+
+/* Стили для textarea */
+textarea {
+    width: 300px;
+    height: 100px;
+    border: 1px solid #8580cb; /* Светло-бирюзовая граница */
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    color: #263238;
+}
+
+/* Стили для кнопки "Наведи на меня" */
+#hoverButton {
+    background-color: #0099ff; /* Бирюзовый */
+    transition: background-color 0.3s ease;
+}
+
+#hoverButton:hover {
+    background-color: #0d0add; /* Темный бирюзовый */
+    color: white;
+}
+
+/* Стили для темной темы */
+body.dark-theme {
+    background-color: #263238; /* Темно-серый */
+    color: #e0f2f1; /* Светлый бирюзовый */
+}
+
+header.dark-theme {
+    background-color: #37474f; /* Еще темнее серый */
+    color: #b2dfdb; /* Светло-бирюзовый */
+}
+
+button.dark-theme {
+    background-color: #37474f;
+    color: #b2dfdb;
+}
+
+button.dark-theme:hover {
+    background-color: #455a64;
+}
+
+textarea.dark-theme {
+    background-color: #37474f;
+    color: #b2dfdb;
+    border: 1px solid #455a64;
+}
